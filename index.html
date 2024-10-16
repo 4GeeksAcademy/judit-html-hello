@@ -4,129 +4,130 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
-       <div class="container border">
-        <div class="container-header bg-secondary m-2 p-2">
-            <h2> Payment Form Example </h2>
+    <div class="row justify-content-center mt-5">
+
+        <div class="col-sm-10 md-1">
+            <div class="card card-outline-secondary">
+
+            <div class="card-header">
+                <h3 class="mb-0">Payment form example</h3>
+            </div>
+
+            <div class="card-body">
+                <div class="alert alert-danger m-2">Some fields are missing</div>
+
+                <form action="#" class="row mt-4">
+
+                    <div class="col-sm-5 pb-3">
+                        <label for="cardInput"> <b> Card#</b></label>
+                        <input type="text" id="cardInput" placeholder="XXXX-XXXX-XXXX-XXXX" class="form-control" pattern="[0-9]{20}" required>
+                    </div>
+
+                    <div class="col-sm-3 pb-3">
+                        <label for="cvcInput"> <b>CVC#</b></label>
+                        <input type="text" id="cvcInput" placeholder="000" class="form-control" pattern="[0-9]{4}" required>
+                    </div>
+
+                    <div class="col-sm-4 pb-3">
+                        <label for="amountdInput"><b>Amount</b></label>
+                        <div class="d-flex">
+                        <span class="input-group-addon"><b>$</b></span>
+                        <input type="number" id="amountInput" placeholder="Amount" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 pb-3">
+                        <label for="firtsnameInput"><b>First Name</b></label>
+                        <input type="text" id="firtsnameInput"  class="form-control" required>
+                    </div>
+
+                    <div class="col-sm-6 pb-3">
+                        <label for="lastnameInput"><b>Last Name</b></label>
+                        <input type="text" id="lastnameInput"  class="form-control"  required>
+                    </div>
+
+                    <div class="col-sm-6 pb-3">
+                        <label for="cityInput"><b>City</b></label>
+                        <input type="text" id="cityInput" class="form-control" required>
+                    </div>
+
+                    <div class="col-sm-3 pb-3">
+                        <label for="stateInput"><b>State</b></label>
+                        <select class="form-select" id="select" aria-label="Default select example" required>
+                            <option class="text-white bg-warning">Pick a state</option>
+                            <option value="1">Spain</option>
+                            <option value="2">France</option>
+                            <option value="3">UK</option>
+                            <option value="4">Germany</option>
+                            <option value="5">Japan</option>
+                            <option value="6">China</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-3 pb-3">
+                        <label for="postalcodeInput"><b>Postal Code</b></label>
+                        <input type="text" id="postalcodeInput" class="form-control"  placeholder="0000" pattern="[0-9]{5}" required>
+                    </div>
+
+                    <div class="col-md-6 pb-3">
+                        <p for="exampleAccount"><b>We acept:</b></p>
+						<div class="btn-group" data-toggle="buttons">
+							<label class="btn btn-secondary">
+								<input autocomplete="off" checked id="blue" name="options" type="radio">
+								<i class="fab fa-cc-mastercard"></i>
+							</label> 
+							<label class="btn btn-secondary">
+								<input autocomplete="off" id="red" name="options" type="radio">
+								<i class="fab fa-cc-visa"></i>
+							</label> 
+							<label class="btn btn-secondary">
+								<input autocomplete="off" id="green" name="options" type="radio">
+								<i class="fab fa-cc-diners-club"></i>
+							</label> 
+							<label class="btn btn-secondary">
+								<input autocomplete="off" id="yellow" name="options" type="radio">
+								<i class="fab fa-cc-amex"></i>
+							</label> 
+						</div>
+                    </div>
+
+
+                    <div class="col-md-6 pb-3">
+                        <label for="messageInput"><b>Message</b></label>
+                        <textarea class="form-control" id="messageInput" rows="3"></textarea>
+                        <small class="text-muted"> Add any notes here.</small>
+                    </div> 
+
+                
+
+                    
+                </form>
+
+            </div>
+
+            <div class="card-footer">
+                <div class="float-end">
+                    <button class="btn btn-secondary" type="reset">Cancel</button>
+                    <button class="btn btn-primary" id="sendForm" type="button">Send</button>
+                </div>
+
+            </div>
+
+
+
         </div>
+    </div>
+
+    </div>
        
-        <form class="row container-fluid g-3 mt-3">
-             
-            <div class="container-fluid m-2">
-                <div class="alert alert-danger" role="alert">
-                    Some fields are missing!
-                </div>
-            </div>
-
-            <div class="col-6">
-                <label for="cardInput" class="form-label"><b>Card</b></label>
-                <input type="text" class="form-contol" id="cardInput" pattern="[0-9]{20}"  placeholder="XXXX-XXXX-XXXX-XXXX" required>
-
-            </div>
-
-            <div class="col-3">
-                <label for="cvcInput" class="form-label"> <b>CVC #</b></label>
-                <input type="text" class="form-contol" id="cvcInput" placeholder="000" pattern="[0-9]{4}" required>
-            </div>
-
-            <div class="col-4">
-                <label for="numberInput" class="form-label"><b> Amount</b></label>
-                <div class="d-flex">
-                <span> <b> $ </b></span>
-                <input type="number" class="form-contol" id="numberInput" placeholder="Amount" required>
-               </div>
-            </div>
-
-            <div class="col-12">
-                <label for="firtsnamenameInput" class="form-label"><b>Firts Name</b></label>
-                <input type="text" class="form-contol" id="firtsnamenameInput" placeholder="First Name" required>
-
-            </div>
-
-            <div class="col pt-1">
-                <p><b>We accept:</b></p>
-                <div class="col-4">
-                   <div class="container container-lg">
-                    <div class="container text-center bg-secondary">
-                    <input class="form-check-input" type="radio" value="" id="mastercard" name="paymentMethod" required>
-                    <label class="form-check-label" for="mastercard">
-                      <i class="fa-brands fa-cc-mastercard text-white"></i>
-                    </label>
-                    <input class="form-check-input " type="radio" value="" id="visa" name="paymentMethod">
-                    <label class="form-check-label" for="visa">
-                      <i class="fa-brands fa-cc-visa text-white"></i>
-                    </label>
-                    <input class="form-check-input" type="radio" value="" id="diners" name="paymentMethod">
-                    <label class="form-check-label" for="diners">
-                      <i class="fa-brands fa-cc-diners-club text-white"></i>
-                    </label>
-                    <input class="form-check-input" type="radio" value="" id="applePay" name="paymentMethod">
-                    <label class="form-check-label" for="applePay">
-                      <i class="fa-brands fa-cc-apple-pay text-white"></i>
-                    </label>
-                  </div>
-                </div>
-             </div>
-            </div>
-                  
-
-            <div class="col-12">
-                <label for="lastnamenameInput" class="form-label"> Last Name </label>
-                <input type="text" class="form-contol" id="astnamenameInput" placeholder="Last Name" required>
-
-            </div>
-
-            <div class="col-12">
-                <label for="cityInput" class="form-label"><b>City</b></label>
-                <input type="text" class="form-contol" id="cityInput"required>
-            </div>
-
-            <div class="col-6">
-                <label for="stateInput" class="form-label"><b>State</b></label>
-                <select class="form-select" id="stateInput" aria-label="Default select example" required>
-                    <option value="">Pick a state</option>
-                    <option value="1">Spain</option>
-                    <option value="2">France</option>
-                    <option value="3">Germany</option>
-                    <option value="4">Portugal</option>
-                    <option value="5">Uk</option>
-                  </select>
-            </div>
-
-            <div class="col-3">
-                <label for="postalcodeInput" class="form-label"><b> Postal Code </b></label>
-                <input type="text" class="form-contol" id="postalcodeInput" pattern="[0-9]{5}">
-            </div>
-
-            <div class="col-12">
-               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="choicecard">
-                <label for="choicecard" class="form-check-label">
-                     <i class="fa-brands fa-cc-visa"></i>
-                </label>
-                </div>
-            </div>
-
-            <div class="form-floating p-0  ">
-                <p>Comments</p>
-                <textarea class="form-control border-secondary" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-                <p class="text-secondary">Add any notes here.</p>
-            </div>
-
-            <div class="d-flex justify-content-end bg-light p-3">
-                <a href="#" class="btn btn-secondary me-2">Cancel</a>
-                <button type="submit" class="btn btn-primary">Send</button>
-            </div>
-            
-        </form>
-
-       </div>
         
    
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 </body>
 </html>
